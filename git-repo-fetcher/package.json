@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
+    "dev": "nodemon index.js",
     "run": "node index.js"
   },
   "author": "",
@@ -12,9 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.2",
     "redis": "^2.8.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
   }
 }

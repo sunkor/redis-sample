@@ -4,11 +4,11 @@ services:
     image: "redis:latest"
   git-repo-fetcher:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: ./git-repo-fetcher
     volumes:
       - /app/node_modules
-      - ./git-repo-fetcher:/app
+      - ./git-repo-fetcher:/usr/src/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
