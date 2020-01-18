@@ -40,7 +40,10 @@ function cache(req, res, next) {
 
   redisClient.get(username, (err, data) => {
     if (err) throw err;
-    if (data) {
+
+    var ignoreCache = req.query.ignoreCache == "true";
+
+    if (data && !ignoreCache) {
       res.send(setResponse(username, data));
     } else {
       next();
