@@ -1,0 +1,16 @@
+version: "3"
+services:
+  redis:
+    image: "redis:latest"
+  git-repo-fetcher:
+    build:
+      dockerfile: Dockerfile
+      context: ./git-repo-fetcher
+    volumes:
+      - /app/node_modules
+      - ./git-repo-fetcher:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    ports:
+      - "8080:8080"
